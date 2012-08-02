@@ -7,7 +7,7 @@ describe "Pet tests", ->
       <div id="test-container">
         <ul id="pets"></ul>
         <script type="text/template" id="pet-template">
-          <li><%= m.get("name") %>, the <%= m.get("type") %></li>
+          <li data-cid="<%= m.cid %>" class="<%= m.has("selected") ? m.get("selected") : "" %>"><%= m.get("name") %>, the <%= m.get("type") %></li>
         </script>
       </div>'
 

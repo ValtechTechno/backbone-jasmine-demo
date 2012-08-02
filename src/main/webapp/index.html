@@ -10,7 +10,7 @@
 		<h1>Animaux :</h1>
 		<ul id="pets"></ul>
 		<script type="text/template" id="pet-template">
-			<li><%= m.get("name") %>, the <%= m.get("type") %></li>
+			<li data-cid="<%= m.cid %>" class="<%= m.has("selected") ? m.get("selected") : "" %>"><%= m.get("name") %>, the <%= m.get("type") %></li>
 		</script>
 		<script src="../javascript/jquery-1.7.2.js"></script>
 		<script src="../javascript/underscore.js"></script>

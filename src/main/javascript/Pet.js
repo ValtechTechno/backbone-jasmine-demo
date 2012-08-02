@@ -10,6 +10,7 @@ var PetsView = Backbone.View.extend({
 		this.col = collection;
 		this.tpl = _.template($("#pet-template").html());
 		this.render();
+		this.col.on("all",this.render,this);
 	},
 	render: function() {
 		var renderedList = this.col.map(function(k) {
@@ -21,7 +22,17 @@ var PetsView = Backbone.View.extend({
 		"click li": "select"
 	},
 	select: function(e) {
-		var li = $(e.target);
-		li.toggleClass('selected');
+		var li = $(e.target),
+		cid = li.data('cid');
+
+		this.col.each(function(o) {
+			if (o.cid == cid) {
+				if (!o.has('selected')) {
+					o.set({'selected': 'selected'});
+					return;
+				}
+			}
+			o.unset('selected');
+		});
 	}
 });
