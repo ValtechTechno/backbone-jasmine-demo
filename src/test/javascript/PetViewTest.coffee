@@ -23,3 +23,6 @@ describe "Pet tests", ->
 
   it "should have a view", ->
     expect(view).toBeDefined()
+
+  it "should displays pets", ->
+    expect( $('#pets li').size() ).toBe 2
