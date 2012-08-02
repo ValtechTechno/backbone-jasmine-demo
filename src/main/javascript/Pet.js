@@ -16,5 +16,12 @@ var PetsView = Backbone.View.extend({
 			return this.tpl({"m":k});
 		}, this).join("")
 		this.$el.html(renderedList);
+	},
+	events: {
+		"click li": "select"
+	},
+	select: function(e) {
+		var li = $(e.target);
+		li.toggleClass('selected');
 	}
 });
