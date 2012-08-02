@@ -8,3 +8,13 @@ describe "Pet tests", ->
     expect(pet.get('name')).toBe 'Snoopy'
     expect(pet.get('type')).toBe 'Dog'
     expect(pet.get('legs')).toBe 4
+
+  it "should be able to create a Pet collection", ->
+    pets = new Pets(
+      [
+        {name:'Snoopy', type:'Dog', legs:4},
+        {name:'Mickey', type:'Mouse', legs:4}
+      ]
+    )
+    expect(pets).toBeDefined()
+    expect(pets.size()).toBe 2
