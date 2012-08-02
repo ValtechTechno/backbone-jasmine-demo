@@ -5,7 +5,10 @@ describe "Pet tests", ->
   beforeEach ->
     $('body').append '
       <div id="test-container">
-       <ul id="pets"></ul>
+        <ul id="pets"></ul>
+        <script type="text/template" id="pet-template">
+          <li><%= m.get("name") %>, the <%= m.get("type") %></li>
+        </script>
       </div>'
 
     pets = new Pets(
