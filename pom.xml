@@ -1,0 +1,33 @@
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>backbone-jasmine-demo</artifactId>
+  <groupId>com.valtech</groupId>
+  <name>Backbone, Jasmine demo</name>
+  <version>0.0.1-SNAPSHOT</version>
+  <modules></modules>
+  <dependencies></dependencies>
+  <build>
+    <plugins>
+      <plugin>
+         <groupId>com.github.searls</groupId>
+         <artifactId>jasmine-maven-plugin</artifactId>
+         <version>1.1.0</version>
+         <executions>
+           <execution>
+             <goals>
+               <goal>test</goal>
+             </goals>
+            </execution>
+         </executions>
+         <configuration>
+           <preloadSources>
+             <source>jquery-1.7.2.js</source>
+             <source>underscore.js</source>
+             <source>backbone.js</source>
+           </preloadSources>
+         </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
