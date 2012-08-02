@@ -29,3 +29,7 @@ describe "Pet tests", ->
 
   it "should displays pets", ->
     expect( $('#pets li').size() ).toBe 2
+
+  it "should select first element when clicking on it", ->
+    $('#pets li').first().trigger 'click'
+    expect($('#pets li').first().hasClass 'selected').toBe true
