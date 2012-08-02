@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" value="IE=edge" />
+		<title>Jasmine / Backbone demo</title>
+	</head>
+	<body>
+		<h1>Animaux :</h1>
+		<ul id="pets"></ul>
+		<script type="text/template" id="pet-template">
+			<li><%= m.get("name") %>, the <%= m.get("type") %></li>
+		</script>
+		<script src="../javascript/jquery-1.7.2.js"></script>
+		<script src="../javascript/underscore.js"></script>
+		<script src="../javascript/backbone.js"></script>
+		<script src="../javascript/Pet.js"></script>
+		<script>
+			var pets = new Pets(
+				[
+					{name:'Snoopy', type:'Dog', legs:4},
+					{name:'Mickey', type:'Mouse', legs:4}
+				]
+			);
+			var view = new PetsView(pets);
+		</script>
+	</body>
+</html>
